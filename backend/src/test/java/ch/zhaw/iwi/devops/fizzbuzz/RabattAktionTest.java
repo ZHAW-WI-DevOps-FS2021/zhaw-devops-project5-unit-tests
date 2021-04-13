@@ -39,6 +39,6 @@ public class RabattAktionTest {
     public void RabattAktion100() {
 
         RabattAktion rabatt = new RabattAktion();
-        Assert.assertEquals("Menge nicht bestellbar", rabatt.convert(100));
+        Assert.assertEquals("20 % Mengenrabatt erhalten", rabatt.convert(100));
     }
 }
