@@ -6,6 +6,13 @@ import org.junit.Test;
 public class RabattAktionTest {
 
     @Test
+    public void RabattAktion0() {
+
+    RabattAktion rabatt = new RabattAktion();
+    Assert.assertEquals("Kein Mengenrabatt erhalten", rabatt.convert(0));
+    } 
+    
+    @Test
     public void RabattAktion1() {
 
     RabattAktion rabatt = new RabattAktion();
@@ -24,7 +31,14 @@ public class RabattAktionTest {
 
         RabattAktion rabatt = new RabattAktion();
         Assert.assertEquals("1 % Mengenrabatt erhalten", rabatt.convert(5));
-        }
+    }
+
+    @Test
+    public void RabattAktion7() {
+
+        RabattAktion rabatt = new RabattAktion();
+        Assert.assertEquals("1 % Mengenrabatt erhalten", rabatt.convert(7));
+    }
 
 
     @Test
@@ -40,5 +54,12 @@ public class RabattAktionTest {
 
         RabattAktion rabatt = new RabattAktion();
         Assert.assertEquals("20 % Mengenrabatt erhalten", rabatt.convert(100));
+    }
+
+    @Test
+    public void RabattAktionMaxInt() {
+
+        RabattAktion rabatt = new RabattAktion();
+        Assert.assertEquals("429496729 % Mengenrabatt erhalten", rabatt.convert(Integer.MAX_VALUE));
     }
 }
